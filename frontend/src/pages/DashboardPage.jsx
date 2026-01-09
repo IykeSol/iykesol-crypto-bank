@@ -5,7 +5,9 @@ import UserDashboard from '../components/dashboard/UserDashboard';
 import TransactionForm from '../components/transactions/TransactionForm';
 import TransactionHistory from '../components/transactions/TransactionHistory';
 import AccountLinking from '../components/auth/AccountLinking';
+import config from '../config';
 import '../styles/pages.css';
+
 
 const DashboardPage = () => {
   const { isAuthenticated, loading, user } = useAuth();
@@ -13,28 +15,31 @@ const DashboardPage = () => {
   const [balance, setBalance] = useState(0);
   const [balanceLoading, setBalanceLoading] = useState(true);
 
-  // Fetch dashboard data including token balance
+
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
         setBalanceLoading(true);
-        const token = localStorage.getItem('authToken'); // CHANGED HERE
+        const token = localStorage.getItem('authToken');
         
         if (!token) {
           setBalanceLoading(false);
           return;
         }
 
-        const response = await fetch('http://localhost:5000/api/auth/dashboard', {
+
+        const response = await fetch(`${config.apiUrl}/auth/dashboard`, {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
           }
         });
 
+
         if (!response.ok) {
           throw new Error('Failed to fetch dashboard data');
         }
+
 
         const data = await response.json();
         
@@ -49,22 +54,27 @@ const DashboardPage = () => {
       }
     };
 
+
     if (isAuthenticated && !loading) {
       fetchDashboardData();
     }
   }, [isAuthenticated, loading, refreshKey]);
 
+
   if (loading) {
     return <div className="loading-container">Loading...</div>;
   }
+
 
   if (!isAuthenticated) {
     return <Navigate to="/login" />;
   }
 
+
   const handleTransactionSuccess = () => {
     setRefreshKey(prev => prev + 1);
   };
+
 
   return (
     <div className="dashboard-page">
@@ -74,12 +84,14 @@ const DashboardPage = () => {
         balanceLoading={balanceLoading}
       />
 
+
       <div className="dashboard-content">
         <div className="content-grid">
           <div className="main-content">
             <TransactionForm onSuccess={handleTransactionSuccess} />
             <TransactionHistory key={refreshKey} />
           </div>
+
 
           <div className="sidebar">
             {user && !user.walletAddress && (
@@ -96,6 +108,7 @@ const DashboardPage = () => {
               </ul>
             </div>
 
+
             <div className="info-card">
               <h3>How to Use</h3>
               <ol>
@@ -111,5 +124,6 @@ const DashboardPage = () => {
     </div>
   );
 };
+
 
 export default DashboardPage;
