@@ -1,0 +1,261 @@
+.header {
+  background-color: white;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap; /* Keep everything in one line */
+}
+
+.wallet-badge {
+  background-color: var(--light-bg);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+.user-email {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.btn-logout {
+  padding: 0.5rem 1rem;
+  background-color: var(--danger-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.btn-logout svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.btn-logout:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+.btn-logout:active {
+  transform: translateY(0);
+}
+
+.btn-login {
+  padding: 0.5rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-login:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .header-container {
+    padding: 1rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+  
+  .nav {
+    gap: 1.5rem;
+  }
+  
+  .user-info {
+    gap: 0.75rem;
+  }
+  
+  .wallet-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .user-email {
+    font-size: 0.8rem;
+    max-width: 150px;
+  }
+  
+  .btn-logout {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+  }
+  
+  .btn-logout svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+  
+  .nav {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .user-info {
+    width: 100%;
+    justify-content: flex-start; /* Changed from space-between */
+    gap: 0.5rem;
+    flex-wrap: nowrap; /* Keep in one row */
+  }
+  
+  .wallet-badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
+    max-width: 100px; /* Limit width so others fit */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .user-email {
+    font-size: 0.7rem;
+    max-width: 80px; /* Smaller to fit logout button */
+  }
+  
+  .btn-logout {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    margin-left: auto; /* Push to the right */
+  }
+  
+  .btn-logout svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .logo h1 {
+    font-size: 1rem;
+  }
+  
+  .nav {
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.85rem;
+    padding: 0.25rem 0;
+  }
+  
+  .user-info {
+    gap: 0.4rem;
+  }
+  
+  .wallet-badge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.4rem;
+    max-width: 80px;
+  }
+  
+  .user-email {
+    font-size: 0.65rem;
+    max-width: 70px;
+  }
+  
+  .btn-logout {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+  }
+  
+  .btn-logout svg {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .btn-logout span {
+    display: none; /* Hide "Logout" text, show only icon on very small screens */
+  }
+  
+  .btn-login {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+}

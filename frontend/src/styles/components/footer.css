@@ -1,0 +1,22 @@
+.footer {
+  background-color: var(--dark-bg);
+  color: white;
+  padding: 2rem 1rem;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-container p {
+  margin-bottom: 0.5rem;
+}
+
+.footer-disclaimer {
+  color: var(--warning-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+}

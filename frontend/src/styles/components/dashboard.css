@@ -1,0 +1,245 @@
+.user-dashboard h2 {
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.balance-card {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.balance-card h3 {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.balance-amount {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.balance-amount .amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.balance-amount .currency {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.wallet-address {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  font-family: monospace;
+}
+
+.quick-actions {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--card-shadow);
+}
+
+.quick-actions h3 {
+  margin-bottom: 1rem;
+}
+
+.actions-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--light-bg);
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.action-btn:hover {
+  border-color: var(--primary-color);
+  background: white;
+}
+
+.action-icon {
+  font-size: 1.5rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.metrics-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--card-shadow);
+  border-left: 4px solid var(--primary-color);
+}
+
+.metrics-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.metrics-icon {
+  font-size: 1.5rem;
+}
+
+.metrics-header h4 {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metrics-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Loan Management Section */
+.loan-management-section,
+.active-loans-section {
+  margin-top: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.loan-management-section h3,
+.active-loans-section h3 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+/* Loans Table */
+.loans-table {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.loans-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.loans-table thead {
+  background: #f8f9fa;
+}
+
+.loans-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #dee2e6;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.loans-table td {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+  color: #212529;
+  vertical-align: middle;
+}
+
+.loans-table tbody tr:hover {
+  background: #f8f9fa;
+  transition: background 0.2s;
+}
+
+.loans-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Action Buttons */
+.btn-approve,
+.btn-reject {
+  padding: 6px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-approve {
+  background: #28a745;
+  color: white;
+  margin-right: 8px;
+}
+
+.btn-approve:hover {
+  background: #218838;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+.btn-reject {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-reject:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+
+/* Responsive Table */
+@media (max-width: 1024px) {
+  .loans-table {
+    font-size: 0.875rem;
+  }
+
+  .loans-table th,
+  .loans-table td {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .loans-table {
+    font-size: 0.75rem;
+  }
+
+  .btn-approve,
+  .btn-reject {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+}
