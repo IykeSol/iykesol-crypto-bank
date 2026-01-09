@@ -20,3 +20,20 @@
   font-size: 0.875rem;
   font-weight: 600;
 }
+
+.footer-developer {
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.footer-developer a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-developer a:hover {
+  color: #357abd;
+  text-decoration: underline;
+}
