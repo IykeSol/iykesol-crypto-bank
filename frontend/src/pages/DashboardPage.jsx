@@ -28,7 +28,7 @@ const DashboardPage = () => {
         }
 
 
-        const response = await fetch(`${config.apiUrl}/auth/dashboard`, {
+        const response = await fetch(`${config.apiUrl}/api/auth/dashboard`, {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
