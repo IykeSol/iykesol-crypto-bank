@@ -9,6 +9,9 @@ const Footer = () => {
         <p className="footer-disclaimer">
           This is a testnet simulation. Not real financial services.
         </p>
+        <p className="footer-developer">
+          Developed by <a href="https://iykesol-portfolio.netlify.app" target="_blank" rel="noopener noreferrer">IykeSol</a>
+        </p>
       </div>
     </footer>
   );
